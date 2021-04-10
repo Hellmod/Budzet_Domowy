@@ -25,5 +25,6 @@ public interface PlanRepository extends JpaRepository<Plan, Integer> {
     @Query(value = "UPDATE `plan` SET `amount` = :amount, `description` = :description, `date` = :date WHERE `plan`.`id_plan` = :id_plan", nativeQuery = true)
     void updatePlan(@Param("id_plan") int id_plan, @Param("amount") Double amount, @Param("description") String description, @Param("date") Date date);
 
-    Plan findByDate(Date date);
+    @Query(value = "SELECT * FROM plan WHERE plan.id_user=:idUser AND plan.date=:date ", nativeQuery = true)
+    Plan findByIdAndDate(@Param("idUser") int idUser, @Param("date") Date date);
 }

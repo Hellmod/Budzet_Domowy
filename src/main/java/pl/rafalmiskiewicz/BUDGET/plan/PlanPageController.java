@@ -86,7 +86,7 @@ public class PlanPageController {
             }
         plan.setId_user(userService.findUserByEmail(UserUtilities.getLoggedUser()).getId());
 
-        Plan planExist = planService.findPlanByDate(plan.getDate());
+        Plan planExist = planService.findPlanByIdAndDate(plan.getId_user(),plan.getDate());
 
         new PlanAddValidator().validate(plan, result);
         new PlanAddValidator().validateMonthExist(planExist, result);

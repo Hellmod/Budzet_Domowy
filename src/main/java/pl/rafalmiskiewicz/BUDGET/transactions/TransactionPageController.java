@@ -11,7 +11,6 @@ import pl.rafalmiskiewicz.BUDGET.plan.Plan;
 import pl.rafalmiskiewicz.BUDGET.plan.PlanService;
 import pl.rafalmiskiewicz.BUDGET.user.UserService;
 import pl.rafalmiskiewicz.BUDGET.utilities.UserUtilities;
-import pl.rafalmiskiewicz.BUDGET.validators.TransactionAddValidator;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -55,7 +54,7 @@ public class TransactionPageController {
 
         //List<Transaction> transactionList = transactionService.findAllByUserId(userService.findUserByEmail(UserUtilities.getLoggedUser()).getId());
         List<Transaction> transactionList = transactionService.findAllByMonth(userService.findUserByEmail(UserUtilities.getLoggedUser()),date);
-        Plan plan = planService.findPlanByDate(date);
+        Plan plan = planService.findPlanByIdAndDate(userService.findUserByEmail(UserUtilities.getLoggedUser()).getId(),date);
         if(plan==null) {
             plan = new Plan();
             plan.setAmount(0.0);

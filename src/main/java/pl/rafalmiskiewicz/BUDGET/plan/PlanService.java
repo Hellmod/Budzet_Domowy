@@ -12,5 +12,5 @@ public interface PlanService {
     List<Plan> findAllByUserId(int id);
     void savePlan(Plan plan);
     void updatePlan(Plan plan);
-    Plan findPlanByDate(Date date);
+    Plan findPlanByIdAndDate(int id, Date date);
 }

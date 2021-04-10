@@ -7,9 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BUDGET" />
-        <module name="Budzet_Domowy" />
-        <module name="ADOZL" />
         <module name="ADOZL_Spring_Zarzadzanie_Ludzmi" />
+        <module name="ADOZL" />
+        <module name="Budzet_Domowy" />
       </profile>
     </annotationProcessing>
   </component>
