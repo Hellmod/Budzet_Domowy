@@ -60,16 +60,21 @@
 							<button type="submit"  class="btn btn-primary">Wyszukaj</button>
 
 						</form>
-						<c:forEach var="user" items="${transactionList }">
-							<sf:form id="${user.id_transaction}" action="transaction/edit" modelAttribute="transaction" enctype="multipart/form-data" method="POST">
-								<sf:hidden value="${user.id_transaction }" path="id_transaction"/>
+						<c:forEach var="transaction" items="${transactionList }">
 								<tr>
-									<td ><c:out value="${user.amount }" /></td>
-									<td ><c:out value="${user.description }" /></td>
-									<td ><fmt:formatDate value="${user.date}" pattern="yyyy-MM-dd HH:mm" /></td>
-									<td ><input type="submit" value="<s:message code="button.edit"/>" /></td>
+									<td ><c:out value="${transaction.amount }" /></td>
+									<td ><c:out value="${transaction.description }" /></td>
+									<td ><fmt:formatDate value="${transaction.date}" pattern="yyyy-MM-dd HH:mm" /></td>
+
+									<sf:form id="${transaction.id_transaction}" action="transaction/edit" modelAttribute="transaction" enctype="multipart/form-data" method="POST">
+										<sf:hidden value="${transaction.id_transaction }" path="id_transaction"/>
+											<td ><input type="submit" value="<s:message code="button.edit"/>" /></td>
+									</sf:form>
+									<sf:form id="${transaction.id_transaction}" action="transaction/delete" modelAttribute="transaction" enctype="multipart/form-data" method="POST">
+										<sf:hidden value="${transaction.id_transaction }" path="id_transaction"/>
+										<td ><input type="submit" value="<s:message code="button.delete"/>" /></td>
+									</sf:form>
 								</tr>
-							</sf:form>
 						</c:forEach>
 						</tbody>
 					</table>

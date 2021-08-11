@@ -47,4 +47,9 @@ public class TransactionServiceImpl implements TransactionService {
     public void updateTransaction(Transaction transaction) {
         transactionRepository.updateTransaction(transaction.getId_transaction(), transaction.getAmount(), transaction.getDescription(), transaction.getDate());
     }
+
+    @Override
+    public void deleteTransaction(int id) {
+        transactionRepository.deleteTransaction(id);
+    }
 }

@@ -93,6 +93,17 @@ public class TransactionPageController {
     }
 
     @GET
+    @RequestMapping(value = "/transaction/delete")
+    @Secured(value = {"ROLE_ADMIN","ROLE_USER"})
+    public String getTransactionIdToDelete(Transaction transaction) {
+
+        System.out.println(transaction);
+        transactionService.deleteTransaction(transaction.getId_transaction());
+
+        return "transaction/transaction";
+    }
+
+    @GET
     @RequestMapping(value = "/transaction/addtransaction")
     @Secured(value = {"ROLE_ADMIN","ROLE_USER"})
     public String addTransaction( Model model) {
