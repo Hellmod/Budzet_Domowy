@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title><s:message code="hourEdit.pageName"/></title>
+	<title><s:message code="transactionEdit.pageName"/></title>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,7 +32,7 @@
 		<div class="container">
 
 			<header>
-				<h1><s:message code="hourEdit.pageName" /></h1>
+				<h1><s:message code="transactionEdit.pageName" /></h1>
 				<p><c:out value="${message }" /></p>
 			</header>
 

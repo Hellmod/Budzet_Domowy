@@ -32,7 +32,7 @@
 		<div class="container">
 
 			<header>
-				<h1><s:message code="hourEdit.pageName" /></h1>
+				<h1><s:message code="planEdit.pageName" /></h1>
 				<p><c:out value="${message }" /></p>
 			</header>
 
