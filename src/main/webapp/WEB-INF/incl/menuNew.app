@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-budget navbar-expand-lg">
 
-			<a class="navbar-brand" href="/"><img src="/resources/images/moneta1.jpg" width="30" height="30" class="d-inline-block mr-1 align-bottom" alt=""> <s:message code="menu.budget"/></a>
+			<a class="navbar-brand" href="/"> <i class="icon-wallet"></i> <s:message code="menu.budget"/></a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
 				<span class="navbar-toggler-icon"></span>
