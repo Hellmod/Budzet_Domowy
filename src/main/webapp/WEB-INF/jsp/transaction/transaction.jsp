@@ -83,6 +83,24 @@
 					<p>Twoja aktualna suma pieniędzy to: <fmt:formatNumber type="number" maxFractionDigits="2" value="${amount}"/>zł</p>
 					<p>Możesz jeszcze wydać: <fmt:formatNumber type="number" maxFractionDigits="2" value="${planAmount}"/>zł</p>
 					<p>Twój plan <c:out value="${plan.description }" /> wynosi <fmt:formatNumber type="number" maxFractionDigits="2" value="${plan.amount }" /></p>
+
+
+					<table class="table table-striped table-dark">
+						<thead>
+						<tr>
+							<td ><s:message code="transaction.category"/></td>
+                            <td ><s:message code="transaction.amount"/></td>
+						</tr>
+						</thead>
+						<tbody>
+                            <c:forEach var="categoryItem" items="${transactionListSortByCategory }">
+                                <tr>
+                                    <td ><c:out value="${categoryItem.category }" /></td>
+                                    <td ><c:out value="${categoryItem.amount }" /></td>
+                                </tr>
+                            </c:forEach>
+						</tbody>
+					</table>
 				</div>
 
 			</div>
