@@ -96,7 +96,7 @@
                             <c:forEach var="categoryItem" items="${transactionListSortByCategory }">
                                 <tr>
                                     <td ><c:out value="${categoryItem.category }" /></td>
-                                    <td ><c:out value="${categoryItem.amount }" /></td>
+                                    <td ><fmt:formatNumber type="number" maxFractionDigits="2" value="${categoryItem.amount}"/></td>
                                 </tr>
                             </c:forEach>
 						</tbody>
