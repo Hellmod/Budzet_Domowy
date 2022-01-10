@@ -16,6 +16,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -54,6 +55,8 @@ public class TransactionPageController {
 
         //List<Transaction> transactionList = transactionService.findAllByUserId(userService.findUserByEmail(UserUtilities.getLoggedUser()).getId());
         List<Transaction> transactionList = transactionService.findAllByMonth(userService.findUserByEmail(UserUtilities.getLoggedUser()),date);
+        List<CategoryGroup> transactionListSortByCategory = conwertToGroup(transactionList);
+
         Plan plan = planService.findPlanByIdAndDate(userService.findUserByEmail(UserUtilities.getLoggedUser()).getId(),date);
         if(plan==null) {
             plan = new Plan();
@@ -73,6 +76,10 @@ public class TransactionPageController {
 
         model.addAttribute(new Transaction());
         return "transaction/transaction";
+    }
+
+    private ArrayList<CategoryGroup> conwertToGroup(List<Transaction> transactionList) {
+        return new ArrayList<CategoryGroup>();
     }
 
     @GET

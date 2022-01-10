@@ -35,7 +35,12 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public List<Transaction> findAllByMonth(User user, Date date) {
-        return transactionRepository.findAllByMonth(user.getId(),date.getMonth()+1);
+        return transactionRepository.findAllByMonth(user.getId(), date.getMonth() + 1);
+    }
+
+    @Override
+    public List<CategoryGroup> findAllByMonthAndCategory(User user, Date date) {
+        return transactionRepository.findAllByMonthAndCategory(user.getId(), date.getMonth() + 1);
     }
 
     @Override
@@ -45,7 +50,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public void updateTransaction(Transaction transaction) {
-        transactionRepository.updateTransaction(transaction.getId_transaction(), transaction.getAmount(), transaction.getDescription(),transaction.getCategory(), transaction.getDate());
+        transactionRepository.updateTransaction(transaction.getId_transaction(), transaction.getAmount(), transaction.getDescription(), transaction.getCategory(), transaction.getDate());
     }
 
     @Override

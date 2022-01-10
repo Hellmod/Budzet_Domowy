@@ -11,6 +11,7 @@ public interface TransactionService {
     Transaction findTransactionById(int id);
     List<Transaction> findAllByUserId(int id);
     List<Transaction> findAllByMonth(User user, Date date);
+    List<CategoryGroup> findAllByMonthAndCategory(User user, Date date);
     void saveTransaction(Transaction transaction);
     void updateTransaction(Transaction transaction);
     void deleteTransaction(int id);
