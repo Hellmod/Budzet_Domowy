@@ -55,6 +55,12 @@
 						</div>
 
 						<div class="form-group">
+							<label for="description"><s:message code="transaction.category"/></label>
+							<sf:input path="category" class="form-control" />
+							<small id="category" class="form-text text-danger"><sf:errors path="category"/></small>
+						</div>
+
+						<div class="form-group">
 							<label for="description"><s:message code="transaction.description"/></label>
 							<sf:input path="description" class="form-control" />
 							<small id="description" class="form-text text-danger"><sf:errors path="description"/></small>

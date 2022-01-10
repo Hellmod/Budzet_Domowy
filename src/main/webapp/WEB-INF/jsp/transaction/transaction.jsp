@@ -47,6 +47,7 @@
 
 							<td ><s:message code="transaction.amount"/></td>
 							<td ><s:message code="transaction.description"/></td>
+							<td ><s:message code="transaction.category"/></td>
 							<td ><s:message code="transaction.date"/></td>
 						</tr>
 						</thead>
@@ -64,6 +65,7 @@
 								<tr>
 									<td ><c:out value="${transaction.amount }" /></td>
 									<td ><c:out value="${transaction.description }" /></td>
+									<td ><c:out value="${transaction.category }" /></td>
 									<td ><fmt:formatDate value="${transaction.date}" pattern="yyyy-MM-dd HH:mm" /></td>
 
 									<sf:form id="${transaction.id_transaction}" action="transaction/edit" modelAttribute="transaction" enctype="multipart/form-data" method="POST">

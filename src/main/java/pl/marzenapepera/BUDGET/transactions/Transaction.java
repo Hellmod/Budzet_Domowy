@@ -23,6 +23,9 @@ public class Transaction {
     @Column(name = "date")
     private Date date;
 
+    @Column(name = "category")
+    private String category;
+
     @ManyToOne
     @JoinColumn(name="id_user", nullable=false)
     private User user;
@@ -84,5 +87,13 @@ public class Transaction {
 
     public void dateToString() throws ParseException {
         setDate_string(getDate().toString().substring(0,10)+"T"+getDate().toString().substring(11,16));
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

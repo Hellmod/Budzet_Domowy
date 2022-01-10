@@ -50,6 +50,8 @@
 							<input name="amount" type=number step=any class="form-control" id="amount" >
 								<label for="description"><s:message code="transaction.description"/></label>
 							<input name="description" class="form-control" id="description" >
+								<label for="category"><s:message code="transaction.category"/></label>
+							<input name="category" class="form-control" id="category" >
 
 						</div>
 

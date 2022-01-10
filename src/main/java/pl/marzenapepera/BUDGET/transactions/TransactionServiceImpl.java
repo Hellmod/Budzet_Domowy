@@ -45,7 +45,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public void updateTransaction(Transaction transaction) {
-        transactionRepository.updateTransaction(transaction.getId_transaction(), transaction.getAmount(), transaction.getDescription(), transaction.getDate());
+        transactionRepository.updateTransaction(transaction.getId_transaction(), transaction.getAmount(), transaction.getDescription(),transaction.getCategory(), transaction.getDate());
     }
 
     @Override
