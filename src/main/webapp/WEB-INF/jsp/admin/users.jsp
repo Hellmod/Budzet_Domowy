@@ -13,9 +13,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/resources/css/main.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+<%@include file="/WEB-INF/incl/import.app" %>
 
 	<!--[if lt IE 9]>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -85,8 +83,8 @@
 												</c:otherwise>
 											</c:choose>
 										</c:forEach>
-									<td ><input type="button" value="<s:message code="button.edit"/>"
-										onclick="window.location.href='${pageContext.request.contextPath}edit/${user.id }'"/></td>
+									<td ><button type="submit" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}edit/${user.id }'"/><i class="fas fa-pencil-alt"></i> <s:message code="button.edit"/></td>
+
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -98,16 +96,16 @@
 							<td colspan="7" align="right">
 
 								<c:if test="${currentPage > 1}">
-									<input type="button"
-										   onclick="window.location.href='${pageContext.request.contextPath}/admin/users/${currentPage - 1}'"
-										   value="<s:message code="link.poprzedni"/>"/>&nbsp;&nbsp;
-								</c:if>
+
+									<button type="submit" class="btn btn-primary"onclick="window.location.href='${pageContext.request.contextPath}/admin/users/${currentPage - 1}'"/>
+									<i class="fas fa-arrow-circle-left"></i> <s:message code="link.poprzedni"/>
+						</c:if>
 
 								<c:if test="${currentPage < totalPages}">
-									<input type="button"
-										   onclick="window.location.href='${pageContext.request.contextPath}/admin/users/${currentPage + 1}'"
-										   value="<s:message code="link.nastepny"/>"/>
-								</c:if>
+									<button type="submit" class="btn btn-primary"onclick="window.location.href='${pageContext.request.contextPath}/admin/users/${currentPage + 1}'"/>
+										<s:message code="link.nastepny"/> <i class="fas fa-arrow-circle-right"></i>
+
+						</c:if>
 
 							</td>
 						</tr>

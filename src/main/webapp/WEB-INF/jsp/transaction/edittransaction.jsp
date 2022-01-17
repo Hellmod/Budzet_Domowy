@@ -13,9 +13,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/resources/css/main.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+<%@include file="/WEB-INF/incl/import.app" %>
 
 	<!--[if lt IE 9]>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -66,8 +64,8 @@
 							<small id="description" class="form-text text-danger"><sf:errors path="description"/></small>
 						</div>
 
-						<button type="submit" class="btn btn-primary"><s:message code="button.save" /></button>
-						<button type="reset" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'"><s:message code="button.cancel" /></button>
+						<button type="submit" class="btn btn-primary"><i class="fas fa-check-circle"></i> <s:message code="button.save" /></button>
+						<button type="reset" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/'"><i class="fas fa-times-circle"></i> <s:message code="button.cancel" /></button>
 
 					</sf:form>
 				</div>

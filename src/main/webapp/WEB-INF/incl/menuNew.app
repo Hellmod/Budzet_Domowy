@@ -11,24 +11,24 @@
 				<ul class="navbar-nav mr-auto">
 
 					<li class="nav-item">
-						<a id="index" class="nav-link"  href="/"> <s:message code="menu.mainPage"/> </a>
+						<a id="index" class="nav-link"  href="/"><i class="fas fa-home"></i> <s:message code="menu.mainPage"/> </a>
 					</li>
 
 <sec:authorize access="hasRole('ROLE_USER')">
 					<li class="nav-item dropdown">
-						<a id="allhour" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> <s:message code="menu.transaction"/> </a>
+						<a id="allhour" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> <i class="fas fa-exchange-alt"></i> <s:message code="menu.transaction"/> </a>
 						<div class="dropdown-menu" aria-labelledby="submenu">
-							<a id="transaction" class="dropdown-item" href="/transaction"> <s:message code="menu.transaction"/> </a>
+							<a id="transaction" class="dropdown-item" href="/transaction"> <i class="fas fa-exchange-alt"></i> <s:message code="menu.transaction"/> </a>
 							<div class="dropdown-divider"></div>
-							<a id="hourAdd" class="dropdown-item" href="/transaction/addtransaction"> <s:message code="menu.hourAdd"/> </a>
+							<a id="hourAdd" class="dropdown-item" href="/transaction/addtransaction"><i class="fas fa-plus-circle"></i> <s:message code="menu.hourAdd"/> </a>
 						</div>
 					</li>
 					<li class="nav-item dropdown">
-						<a id="allplan" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> <s:message code="menu.plan"/> </a>
+						<a id="allplan" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"><i class="fas fa-calendar-alt"></i> <s:message code="menu.plan"/> </a>
 						<div class="dropdown-menu" aria-labelledby="submenu">
-							<a id="plan" class="dropdown-item" href="/plan"> <s:message code="menu.plan"/> </a>
+							<a id="plan" class="dropdown-item" href="/plan"><i class="fas fa-calendar-alt"></i> <s:message code="menu.plan"/> </a>
 						<div class="dropdown-divider"></div>
-							<a id="hourAdd" class="dropdown-item" href="/plan/addplan"> <s:message code="menu.planAdd"/> </a>
+							<a id="hourAdd" class="dropdown-item" href="/plan/addplan"><i class="fas fa-plus-circle"></i> <s:message code="menu.planAdd"/> </a>
 					</div>
 					</li>
 
@@ -38,9 +38,9 @@
 <sec:authorize access="hasRole('ROLE_ADMIN')">
 
 					<li class="nav-item dropdown">
-						<a id="alladmin" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> <s:message code="menu.adminPage"/> </a>
+						<a id="alladmin" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"><i class="fas fa-users-cog"></i> <s:message code="menu.adminPage"/> </a>
 						<div class="dropdown-menu" aria-labelledby="submenu">
-							<a id="users" class="dropdown-item" href="/admin/users/1"> <s:message code="menu.users"/> </a>
+							<a id="users" class="dropdown-item" href="/admin/users/1"><i class="fas fa-users"></i> <s:message code="menu.users"/> </a>
 						</div>
 					</li>
 
@@ -48,17 +48,17 @@
 </sec:authorize>
 <sec:authorize access="isAuthenticated()">
 					<li class="nav-item">
-						<a id="profil" class="nav-link" href="/profil"> <s:message code="menu.profil"/> </a>
+						<a id="profil" class="nav-link" href="/profil"><i class="fas fa-user-circle"></i> <s:message code="menu.profil"/> </a>
 					</li>
 </sec:authorize>
 				</ul>
 <div class="navbar-nav mrl-auto">
 <sec:authorize access="isAuthenticated()">
-				<a class="nav-link" href="/logout"> Wyloguj </a>
+				<a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Wyloguj </a>
 </sec:authorize>
 <sec:authorize access="hasRole('ANONYMOUS')">
-				<a id="login" class="nav-link" href="/login"> <s:message code="menu.login"/> </a>
-				<a id="register" class="nav-link" href="/register"> <s:message code="menu.register"/> </a>
+				<a id="login" class="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i> <s:message code="menu.login"/> </a>
+				<a id="register" class="nav-link" href="/register"><i class="fas fa-edit"></i> <s:message code="menu.register"/> </a>
 </sec:authorize>
 			</div>
 </div>
