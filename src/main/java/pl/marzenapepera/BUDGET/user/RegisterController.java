@@ -11,7 +11,10 @@ import pl.marzenapepera.BUDGET.validators.UserRegisterValidator;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
 
 @Controller
 public class RegisterController {
@@ -39,8 +42,12 @@ public class RegisterController {
         user.setIs_fired(false);
         user.setIs_new(true);
 
-Role role = null;
-
+        Role role = new Role();
+        role.setId(2);
+        role.setRole("ROLE_USER");
+        Role[] keys1 = new Role[1];
+        keys1[0] =  role;
+        user.setRoles(new HashSet<Role>(Arrays.asList(keys1) ));
 
         User userExist = userService.findUserByEmail(user.getEmail());
 

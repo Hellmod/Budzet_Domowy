@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pl.marzenapepera.BUDGET.plan.Plan;
 import pl.marzenapepera.BUDGET.user.UserService;
 import pl.marzenapepera.BUDGET.utilities.UserUtilities;
 import pl.marzenapepera.BUDGET.plan.PlanService;
@@ -28,7 +29,7 @@ public class TransactionsApi {
     private PlanService planService;
 
     @RequestMapping({"/api/transaction"})
-    public String hours() {
+    public String transaction() {
         Date date = new Date();
         date.setDate(1);
         date.setHours(0);
@@ -36,6 +37,32 @@ public class TransactionsApi {
         date.setSeconds(0);
         List<Transaction> transactionList = transactionService.findAllByMonth(userService.findUserByEmail(UserUtilities.getLoggedUser()),date);
         return new Gson().toJson(transactionList);
+    }
+
+    @RequestMapping({"/api/left"})
+    public String left() {
+        Date date = new Date();
+        date.setDate(1);
+        date.setHours(0);
+        date.setMinutes(0);
+        date.setSeconds(0);
+        List<Transaction> transactionList = transactionService.findAllByMonth(userService.findUserByEmail(UserUtilities.getLoggedUser()),date);
+
+        Plan plan = planService.findPlanByIdAndDate(userService.findUserByEmail(UserUtilities.getLoggedUser()).getId(), date);
+        if (plan == null) {
+            plan = new Plan();
+            plan.setAmount(0.0);
+        }
+
+        Double amount = transactionList.stream().mapToDouble(t -> {
+            if (t.getAmount() < 0)
+                return t.getAmount();
+            else return 0;
+        }).sum();
+
+        Amount left = new Amount();
+        left.setAmount(plan.getAmount() + amount);
+        return new Gson().toJson(left);
     }
 
 }
