@@ -63,7 +63,7 @@ document.getElementById('email').onblur = function() {
 document.getElementById('password').onblur = function() {
     let status = document.getElementById('password').value;
     if (status.length < 1) {
-        document.getElementById('passwordHelp').innerHTML = 'Hasło powinno zawierać dużą i małą literę, cyfrę oraz jeden ze znaków !, @, #, $';
+        document.getElementById('passwordHelp').innerHTML = 'Hasło powinno zawierać conajmniej 8 znaków, w tym dużą i małą literę, cyfrę oraz jeden ze znaków !, @, #, $';
         checkmark[3].classList.remove('active');
         disableButton();
     } else {
