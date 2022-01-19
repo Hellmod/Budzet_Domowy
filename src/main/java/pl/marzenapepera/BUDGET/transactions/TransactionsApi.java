@@ -10,6 +10,7 @@ import pl.marzenapepera.BUDGET.user.UserService;
 import pl.marzenapepera.BUDGET.utilities.UserUtilities;
 import pl.marzenapepera.BUDGET.plan.PlanService;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -35,9 +36,11 @@ public class TransactionsApi {
         date.setHours(0);
         date.setMinutes(0);
         date.setSeconds(0);
-        List<Transaction> transactionList = transactionService.findAllByMonth(userService.findUserByEmail(UserUtilities.getLoggedUser()),date);
+        List<Transaction> transactionList = transactionService.findAllByMonth(userService.findUserByEmail(UserUtilities.getLoggedUser()), date);
         return new Gson().toJson(transactionList);
     }
+
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     @RequestMapping({"/api/left"})
     public String left() {
@@ -46,7 +49,7 @@ public class TransactionsApi {
         date.setHours(0);
         date.setMinutes(0);
         date.setSeconds(0);
-        List<Transaction> transactionList = transactionService.findAllByMonth(userService.findUserByEmail(UserUtilities.getLoggedUser()),date);
+        List<Transaction> transactionList = transactionService.findAllByMonth(userService.findUserByEmail(UserUtilities.getLoggedUser()), date);
 
         Plan plan = planService.findPlanByIdAndDate(userService.findUserByEmail(UserUtilities.getLoggedUser()).getId(), date);
         if (plan == null) {
@@ -61,7 +64,9 @@ public class TransactionsApi {
         }).sum();
 
         Amount left = new Amount();
-        left.setAmount(plan.getAmount() + amount);
+        Double l = plan.getAmount() + amount;
+        df.format(l);
+        left.setAmount(df.format(l));
         return new Gson().toJson(left);
     }
 

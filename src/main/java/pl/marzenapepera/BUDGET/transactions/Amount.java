@@ -4,13 +4,13 @@ import javax.persistence.Column;
 
 public class Amount {
     @Column(name = "amount")
-    private Double amount;
+    private String amount;
 
-    public Double getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 }
