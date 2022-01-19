@@ -42,42 +42,42 @@
 						<div class="form-group">
 							<label for="name"><s:message code="register.name"/></label>
 							<input name="name" type="text" class="form-control" id="name" placeholder="<s:message code="register.name"/>">
-							<i class="fa fa-check complete" aria-hidden="true"></i>
+							<i class="fa fa-check complete" hidden="true"></i>
 							<small id="nameHelp" class="form-text text-danger"><sf:errors path="name"/></small>
 						</div>
 
 						<div class="form-group">
 							<label for="lastName"><s:message code="register.lastName"/></label>
 							<input name="lastName" type="text" class="form-control" id="lastName" placeholder="<s:message code="register.lastName"/>">
-							<i class="fa fa-check complete" aria-hidden="true"></i>
+							<i class="fa fa-check complete" hidden="true"></i>
 							<small id="lastNameHelp" class="form-text text-danger"><sf:errors path="lastName"/></small>
 						</div>
 
 						<div class="form-group">
 							<label for="telephone"><s:message code="register.telephone"/></label>
 							<input name="telephone" type="text" class="form-control" id="telephone" placeholder="<s:message code="register.telephone"/>">
-							<i class="fa fa-check complete" aria-hidden="true"></i>
+							<i class="fa fa-check complete" hidden="true"></i>
 							<small class="form-text text-danger"><sf:errors path="telephone"/></small>
 						</div>
 
 						<div class="form-group">
 							<label for="email"><s:message code="register.email" /></label>
-							<input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-							<i class="fa fa-check complete" aria-hidden="true"></i>
+							<input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Adres email">
+							<i class="fa fa-check complete" hidden="true"></i>
 							<small id="emailHelp" class="form-text text-danger"><sf:errors path="email"/></small>
 						</div>
 
 						<div class="form-group">
 							<label for="password"><s:message code="register.password" /></label>
-							<input name="password" type="password" class="form-control" id="password" placeholder="Password">
-							<i class="fa fa-check complete" aria-hidden="true"></i>
+							<input name="password" type="password" class="form-control" id="password" placeholder="Hasło">
+							<i class="fa fa-check complete" hidden="true"></i>
 							<small id="passwordHelp" class="form-text text-danger"><sf:errors path="password"/></small>
 						</div>
 
 						<div class="form-group">
 							<label >Potwierdź hasło</label>
-							<input id="passwordConfirm" class="form-control" type="password">
-							<i class="fa fa-check complete" aria-hidden="true"></i>
+							<input id="passwordConfirm" class="form-control" type="password" placeholder="Potwierdź hasło">
+							<i class="fa fa-check complete" hidden="true"></i>
 							<small id="passwordConfirmdHelp" class="form-text text-danger"></small>
 						</div>
 
